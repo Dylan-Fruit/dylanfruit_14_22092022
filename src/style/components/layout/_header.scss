@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 15vw;
+  height: 100vh;
+  min-width: 205px;
+  padding: 2em 0;
+  position: sticky;
+  left: 0;
+  top: 0;
+  box-shadow: 4px 8px 26px #d9d9d9;
+  &-logo-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+      margin-top: 30px;
+      border-radius: 5px;
+      padding: 15px;
+      cursor: pointer;
+      &:hover {
+        color: #fff;
+        background-color: #93ad18;
+      }
+    }
+  }
+  img {
+    width: 100px;
+  }
+  h1 {
+    color: #93ad18;
+  }
+}
