@@ -7,3 +7,45 @@
   font-family: Rubik, sans-serif;
   font-weight: 300;
 }
+
+@mixin leftFormSideComponents {
+  &-firstName {
+    display: flex;
+    flex-direction: column;
+  }
+  &-lastName {
+    display: flex;
+    flex-direction: column;
+  }
+  &-birthdate {
+    display: flex;
+    flex-direction: column;
+  }
+  &-startDate {
+    display: flex;
+    flex-direction: column;
+  }
+  &-department {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@mixin rightSideFormSideComponents {
+  &-street {
+    display: flex;
+    flex-direction: column;
+  }
+  &-city {
+    display: flex;
+    flex-direction: column;
+  }
+  &-state {
+    display: flex;
+    flex-direction: column;
+  }
+  &-zipcode {
+    display: flex;
+    flex-direction: column;
+  }
+}

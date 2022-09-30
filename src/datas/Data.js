@@ -243,9 +243,20 @@ states.forEach((element) => {
 });
 
 export const departements = [
-  "Sales",
-  "Marketing",
-  "Engineering",
-  "Human Ressources",
-  "Legal",
+  {
+    name: "Sales",
+    abbreviation: "SL",
+  },
+  {
+    name: "Marketing",
+    abbreviation: "MK",
+  },
+  {
+    name: "Human Resources",
+    abbreviation: "HR",
+  },
+  {
+    name: "Legal",
+    abbreviation: "LG",
+  },
 ];

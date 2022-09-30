@@ -10,19 +10,42 @@
   position: sticky;
   left: 0;
   top: 0;
-  box-shadow: 4px 8px 26px #d9d9d9;
+  //box-shadow: 4px 8px 26px #1f1f1f;
   &-logo-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    .btn {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #93ad18;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform-origin: 0 0;
+        border-radius: 5px;
+      }
+    }
     p {
       margin-top: 30px;
       border-radius: 5px;
       padding: 15px;
       cursor: pointer;
+      transition: color 0.4s linear;
+      position: relative;
+      color: #000;
+      &::before {
+        transform: scaleX(0);
+      }
       &:hover {
         color: #fff;
-        background-color: #93ad18;
+        &::before {
+          transform: scaleX(1);
+        }
       }
     }
   }

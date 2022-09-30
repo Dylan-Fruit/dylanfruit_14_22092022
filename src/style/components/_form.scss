@@ -1,0 +1,75 @@
+.create-employee-form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 2em;
+  &-both-side {
+    display: flex;
+    gap: 2em;
+    width: 100%;
+  }
+  &-left-side {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    flex: 1 1;
+    gap: 2rem;
+    /* border: none; */
+    border-radius: 5px;
+    padding: 2rem;
+    @include leftFormSideComponents;
+  }
+  &-right-side {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    flex: 1 1;
+    gap: 2rem;
+    /* border: none; */
+    border-radius: 5px;
+    padding: 2rem;
+    @include rightSideFormSideComponents;
+    h3 {
+      padding: 5px 10px;
+      background-color: #93ad18;
+      border-radius: 5px;
+      color: #fff;
+      width: 90px;
+    }
+  }
+  label {
+    color: #93ad18;
+    font-weight: 400;
+  }
+  input {
+    margin-top: 5px;
+    height: 30px;
+    border-radius: 5px;
+    border: #9b9b9b solid 2px;
+    outline: none;
+    padding: 5px;
+    &:focus {
+      border: #93ad18 solid 2px;
+    }
+  }
+  select {
+    margin-top: 5px;
+    height: 30px;
+    border-radius: 5px;
+    border: #9b9b9b solid 2px;
+    outline: none;
+    padding: 5px;
+    &:focus {
+      border: #93ad18 solid 2px;
+    }
+  }
+  button {
+    padding: 15px;
+    background-color: #93ad18;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+  }
+}
