@@ -5,9 +5,11 @@ import SelectOptions from "../utils/SelectOptions";
 import HandleChange from "../utils/HandleChange";
 import SaveEmployees from "../utils/SaveEmployees";
 import HandleChangeOption from "../utils/HandleChangeOption";
+import Modal from "./Modal";
 
 const CreateEmployeeForm = ({ toggle }) => {
   const [employees, setEmployees] = useGlobalState("employee");
+  const [modaleOpened, setModaleOpened] = useState(false);
   const [employeesFromData, setEmployeesFromData] = useState({
     firstName: "",
     lastName: "",
@@ -20,6 +22,14 @@ const CreateEmployeeForm = ({ toggle }) => {
     zipCode: "",
   });
 
+  const form = document.querySelector("form");
+
+  const onClick = (e) => {
+    e.preventDefault();
+    setModaleOpened(true);
+    form.reset();
+  };
+
   return (
     <form
       className="create-employee-form"
@@ -27,6 +37,7 @@ const CreateEmployeeForm = ({ toggle }) => {
         SaveEmployees(e, employeesFromData, employees, setEmployees)
       }
     >
+      {modaleOpened ? <Modal setModaleOpened={setModaleOpened} /> : ""}
       <div className="create-employee-form-both-side">
         <div className="create-employee-form-left-side">
           <div className="create-employee-form-left-side-firstName">
@@ -147,7 +158,7 @@ const CreateEmployeeForm = ({ toggle }) => {
           </div>
         </div>
       </div>
-      <button type="submit" onClick={toggle}>
+      <button className="saveBtn" type="submit" onClick={(e) => onClick(e)}>
         Save
       </button>
     </form>
