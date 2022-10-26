@@ -5,8 +5,7 @@ function HandleChangeOption(e, setEmployeesFromData, employeesFromData) {
     name: e.target.id,
     value: e.currentTarget.options[idChoice].text,
   };
-
-  const [value, name] = idText;
+  const { value, name } = idText;
 
   setEmployeesFromData({
     ...employeesFromData,

@@ -27,16 +27,12 @@ const CreateEmployeeForm = ({ toggle }) => {
   const onClick = (e) => {
     e.preventDefault();
     setModaleOpened(true);
+    SaveEmployees(e, employeesFromData, employees, setEmployees);
     form.reset();
   };
 
   return (
-    <form
-      className="create-employee-form"
-      onSubmit={(e) =>
-        SaveEmployees(e, employeesFromData, employees, setEmployees)
-      }
-    >
+    <form className="create-employee-form">
       {modaleOpened ? <Modal setModaleOpened={setModaleOpened} /> : ""}
       <div className="create-employee-form-both-side">
         <div className="create-employee-form-left-side">
@@ -45,7 +41,7 @@ const CreateEmployeeForm = ({ toggle }) => {
             <input
               type="text"
               id="first-name"
-              name="first-name"
+              name="firstName"
               onChange={(event) =>
                 HandleChange(event, setEmployeesFromData, employeesFromData)
               }
@@ -56,7 +52,7 @@ const CreateEmployeeForm = ({ toggle }) => {
             <input
               type="text"
               id="last-name"
-              name="last-name"
+              name="lastName"
               onChange={(event) =>
                 HandleChange(event, setEmployeesFromData, employeesFromData)
               }
@@ -68,7 +64,7 @@ const CreateEmployeeForm = ({ toggle }) => {
               type="date"
               id="date-of-birth"
               placeholder="jj/mm/aaaa"
-              name="date-of-birth"
+              name="dateOfBirth"
               onChange={(event) =>
                 HandleChange(event, setEmployeesFromData, employeesFromData)
               }
@@ -80,7 +76,7 @@ const CreateEmployeeForm = ({ toggle }) => {
               type="date"
               id="start-date"
               placeholder="jj/mm/aaaa"
-              name="start-date"
+              name="startDate"
               onChange={(event) =>
                 HandleChange(event, setEmployeesFromData, employeesFromData)
               }
@@ -150,7 +146,7 @@ const CreateEmployeeForm = ({ toggle }) => {
             <input
               type="text"
               id="zipcode"
-              name="zipcode"
+              name="zipCode"
               onChange={(event) =>
                 HandleChange(event, setEmployeesFromData, employeesFromData)
               }
