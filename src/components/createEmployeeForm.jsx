@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { useGlobalState } from "../utils/State";
-import { states, statesName, departements } from "../datas/Data";
+import { states, departements } from "../datas/Data";
 import SelectOptions from "../utils/SelectOptions";
 import HandleChange from "../utils/HandleChange";
 import SaveEmployees from "../utils/SaveEmployees";
 import HandleChangeOption from "../utils/HandleChangeOption";
-import Modal from "./Modal";
 
-const CreateEmployeeForm = ({ toggle }) => {
+function CreateEmployeeForm({ toggle }) {
   const [employees, setEmployees] = useGlobalState("employee");
-  const [modaleOpened, setModaleOpened] = useState(false);
   const [employeesFromData, setEmployeesFromData] = useState({
     firstName: "",
     lastName: "",
@@ -22,18 +20,22 @@ const CreateEmployeeForm = ({ toggle }) => {
     zipCode: "",
   });
 
-  const form = document.querySelector("form");
+  // const form = document.querySelector("form");
 
-  const onClick = (e) => {
-    e.preventDefault();
-    setModaleOpened(true);
-    SaveEmployees(e, employeesFromData, employees, setEmployees);
-    form.reset();
-  };
+  // const onClick = (e) => {
+  //   e.preventDefault();
+  //   SaveEmployees(e, employeesFromData, employees, setEmployees);
+  //   form.reset();
+  // };
 
   return (
-    <form className="create-employee-form">
-      {modaleOpened ? <Modal setModaleOpened={setModaleOpened} /> : ""}
+    <form
+      className="create-employee-form"
+      onSubmit={(e) => {
+        SaveEmployees(e, employeesFromData, employees, setEmployees);
+        toggle();
+      }}
+    >
       <div className="create-employee-form-both-side">
         <div className="create-employee-form-left-side">
           <div className="create-employee-form-left-side-firstName">
@@ -87,7 +89,7 @@ const CreateEmployeeForm = ({ toggle }) => {
             <select
               name="department"
               id="department"
-              defaultValue={departements[0]}
+              defaultValue={"N/A"}
               onChange={(event) =>
                 HandleChangeOption(
                   event,
@@ -129,7 +131,7 @@ const CreateEmployeeForm = ({ toggle }) => {
             <select
               name="state"
               id="state"
-              defaultValue={statesName[0]}
+              defaultValue={"N/A"}
               onChange={(event) =>
                 HandleChangeOption(
                   event,
@@ -154,11 +156,13 @@ const CreateEmployeeForm = ({ toggle }) => {
           </div>
         </div>
       </div>
-      <button className="saveBtn" type="submit" onClick={(e) => onClick(e)}>
-        Save
-      </button>
+      <div className="btnForm">
+        <button type="submit" className="saveBtn">
+          Save
+        </button>
+      </div>
     </form>
   );
-};
+}
 
 export default CreateEmployeeForm;

@@ -4,6 +4,27 @@
     .euka-datatables {
       padding: 25px;
       border-radius: 5px;
+      .table {
+        &-records-per-page-select {
+          outline: none;
+          height: 30px;
+          padding: 5px;
+          &:focus {
+            border: #93ad18 solid 2px;
+          }
+        }
+        &-search-input {
+          margin-top: 5px;
+          height: 30px;
+          border-radius: 5px;
+          border: #9b9b9b solid 2px;
+          outline: none;
+          padding: 5px;
+          &:focus {
+            border: #93ad18 solid 2px;
+          }
+        }
+      }
     }
   }
 }

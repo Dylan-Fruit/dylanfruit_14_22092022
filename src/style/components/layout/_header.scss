@@ -55,4 +55,11 @@
   h1 {
     color: #93ad18;
   }
+  .isActive {
+    width: 100%;
+    background: #93ad18;
+    z-index: -1;
+    border-radius: 5px;
+    color: #fff;
+  }
 }

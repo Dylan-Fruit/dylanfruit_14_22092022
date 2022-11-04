@@ -1,4 +1,8 @@
-export const states = [
+const states = [
+  {
+    name: "N/A",
+    abbreviation: "",
+  },
   {
     name: "Alabama",
     abbreviation: "AL",
@@ -237,12 +241,11 @@ export const states = [
   },
 ];
 
-export let statesName = [];
-states.forEach((element) => {
-  statesName.push(element.name);
-});
-
-export const departements = [
+const departements = [
+  {
+    name: "N/A",
+    abbreviation: "",
+  },
   {
     name: "Sales",
     abbreviation: "SL",
@@ -260,3 +263,5 @@ export const departements = [
     abbreviation: "LG",
   },
 ];
+
+export { states, departements };
