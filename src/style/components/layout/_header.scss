@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    .btn {
+    #btn {
       &::before {
         content: "";
         position: absolute;
@@ -61,5 +61,11 @@
     z-index: -1;
     border-radius: 5px;
     color: #fff;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    &::after {
+      color: #000;
+      transform: scaleX(0);
+    }
   }
 }
