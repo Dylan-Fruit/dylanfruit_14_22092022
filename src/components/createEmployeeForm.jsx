@@ -20,14 +20,6 @@ function CreateEmployeeForm({ toggle }) {
     zipCode: "",
   });
 
-  // const form = document.querySelector("form");
-
-  // const onClick = (e) => {
-  //   e.preventDefault();
-  //   SaveEmployees(e, employeesFromData, employees, setEmployees);
-  //   form.reset();
-  // };
-
   return (
     <form
       className="create-employee-form"
