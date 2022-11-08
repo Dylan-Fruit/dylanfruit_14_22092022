@@ -4,8 +4,6 @@ import { useGlobalState } from "../utils/State";
 
 export default function DataTable() {
   const [employees] = useGlobalState("employee");
-  console.log(employees);
-
   let columns = [
     {
       name: "firstName",
