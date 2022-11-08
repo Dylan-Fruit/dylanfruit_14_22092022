@@ -95,7 +95,7 @@ function CreateEmployeeForm({ toggle }) {
           </div>
         </div>
         <div className="create-employee-form-right-side">
-          <h3>Address</h3>
+          <h2>Address</h2>
           <div className="create-employee-form-right-side-street">
             <label htmlFor="street">Street</label>
             <input
